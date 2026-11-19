@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://oejsq2fd55n3"]
+
+[ext_resource type="Script" uid="uid://dsuv4o1l8u7ws" path="res://scripts/forest.gd" id="1_v0kee"]
+[ext_resource type="Texture2D" uid="uid://bw80qjuki78qb" path="res://assets/amphoreus.webp" id="2_7irge"]
+
+[node name="SceneSummary" type="Node2D" unique_id=1446444034]
+script = ExtResource("1_v0kee")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1620664188]
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+texture = ExtResource("2_7irge")
+expand_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1667904699]
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+
+[node name="Label" type="Label" parent="." unique_id=2062795672]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -299.0
+offset_top = -55.0
+offset_right = 299.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 80
+text = "SceneSummary"
