@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://2s0rcvuk70q6"]
+
+[ext_resource type="Texture2D" uid="uid://d0balm26lxtv1" path="res://assets/Main Menu.png" id="1_y4x85"]
+[ext_resource type="Script" uid="uid://b8k6b7f3j7wm3" path="res://scripts/start_button.gd" id="2_gnrmb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v0s4m"]
+bg_color = Color(0.8509804, 0.5411765, 0.13333334, 1)
+corner_radius_top_left = 11
+corner_radius_top_right = 11
+corner_radius_bottom_right = 11
+corner_radius_bottom_left = 11
+corner_detail = 11
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oeq8l"]
+bg_color = Color(0.6627451, 0.39607844, 0.08235294, 1)
+corner_radius_top_left = 11
+corner_radius_top_right = 11
+corner_radius_bottom_right = 11
+corner_radius_bottom_left = 11
+corner_detail = 11
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sdhfp"]
+bg_color = Color(0.9607843, 0.70980394, 0.26666668, 1)
+corner_radius_top_left = 11
+corner_radius_top_right = 11
+corner_radius_bottom_right = 11
+corner_radius_bottom_left = 11
+corner_detail = 11
+
+[node name="Node2D" type="Node2D" unique_id=1444244573]
+
+[node name="MainMenu" type="Sprite2D" parent="." unique_id=1556320814]
+position = Vector2(576.75, 322.25)
+scale = Vector2(0.60130215, 0.5976852)
+texture = ExtResource("1_y4x85")
+
+[node name="Button" type="Button" parent="." unique_id=347009943]
+offset_left = 859.0
+offset_top = 316.0
+offset_right = 1043.0
+offset_bottom = 406.0
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_v0s4m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oeq8l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sdhfp")
+text = "START"
+script = ExtResource("2_gnrmb")
