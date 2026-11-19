@@ -10,11 +10,27 @@ config_version=5
 
 [application]
 
-config/name="forest_money"
-config/features=PackedStringArray("4.5", "GL Compatibility")
+config/name="forest-money-v1"
+run/main_scene="uid://6pmwhhdrfugg"
+config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*uid://l7jdnwqhfgxs"
+
+[display]
+
+window/size/mode=1
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
 
 [rendering]
 
+rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

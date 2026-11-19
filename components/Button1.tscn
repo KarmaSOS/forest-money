@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dg8aiu1cghn8l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ugwn2"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.2112, 0.24090001, 0.33, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 1
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[node name="Button" type="Button" unique_id=1258147855]
+offset_right = 37.0
+offset_bottom = 8.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ugwn2")
+text = "Butoon"
