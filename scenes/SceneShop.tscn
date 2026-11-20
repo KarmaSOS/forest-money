@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://db1b0gxgijplm"]
+
+[ext_resource type="Texture2D" uid="uid://ckxo86bxw1bvo" path="res://assets/market2.webp" id="2_dabn2"]
+[ext_resource type="PackedScene" uid="uid://5gdusx6nd527" path="res://components/Platform.tscn" id="3_1bh7w"]
+[ext_resource type="PackedScene" uid="uid://w5id7xwh67gd" path="res://components/Player.tscn" id="5_vpl1a"]
+[ext_resource type="PackedScene" uid="uid://ibi2b0be45pm" path="res://components/UI.tscn" id="6_8l357"]
+
+[node name="SceneForest" type="Node2D" unique_id=1446444034]
+
+[node name="Background" type="TextureRect" parent="." unique_id=1140229353]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -149.00003
+offset_top = -25.00003
+offset_right = 3307.0
+offset_bottom = 1919.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_dabn2")
+expand_mode = 1
+
+[node name="Platform" parent="." unique_id=613534105 instance=ExtResource("3_1bh7w")]
+position = Vector2(196.99994, 489.99997)
+scale = Vector2(0.4, 0.4)
+
+[node name="Platform2" parent="." unique_id=1512056455 instance=ExtResource("3_1bh7w")]
+position = Vector2(387.99997, 489.99997)
+scale = Vector2(0.4, 0.4)
+
+[node name="Platform3" parent="." unique_id=518987076 instance=ExtResource("3_1bh7w")]
+position = Vector2(578.99994, 489.99997)
+scale = Vector2(0.4, 0.4)
+
+[node name="Platform4" parent="." unique_id=780149944 instance=ExtResource("3_1bh7w")]
+position = Vector2(770, 489.99997)
+scale = Vector2(0.4, 0.4)
+
+[node name="Player" parent="." unique_id=1671942093 instance=ExtResource("5_vpl1a")]
+position = Vector2(475, 319)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1667904699]
+position = Vector2(1, -30)
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=335407916]
+
+[node name="Control" parent="CanvasLayer" unique_id=1962362687 instance=ExtResource("6_8l357")]
+offset_top = 7.0
+offset_bottom = 7.0
+metadata/_edit_lock_ = true
+
+[node name="toShop" parent="CanvasLayer/Control/MARGIN/MainContainer/Footer" parent_id_path=PackedInt32Array(1962362687, 242305525) index="1" unique_id=916698627]
+visible = false
+
+[editable path="CanvasLayer/Control"]

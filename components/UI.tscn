@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://ibi2b0be45pm"]
+
+[ext_resource type="Script" uid="uid://csen0ivqc5xqo" path="res://scripts/UI.gd" id="1_mq1n1"]
+[ext_resource type="PackedScene" uid="uid://btela0i0x5rwp" path="res://components/Resource.tscn" id="2_2ossi"]
+[ext_resource type="Texture2D" uid="uid://d1hgq0c2lhcwi" path="res://assets/icons/energy.jpg" id="3_f4gyg"]
+[ext_resource type="Texture2D" uid="uid://c1ehjt6ii4oi1" path="res://assets/icons/logs.png" id="4_swc3y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fjvgw"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_right = 4
+corner_detail = 1
+
+[node name="Control" type="Control" unique_id=1962362687]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mq1n1")
+
+[node name="MARGIN" type="MarginContainer" parent="." unique_id=122601098]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_vertical = 3
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="CONTAINER" type="VBoxContainer" parent="MARGIN" unique_id=1112336758]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="TOP" type="HBoxContainer" parent="MARGIN/CONTAINER" unique_id=180434360]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="space" type="Control" parent="MARGIN/CONTAINER/TOP" unique_id=1714613515]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="resources" type="HBoxContainer" parent="MARGIN/CONTAINER/TOP" unique_id=42367190]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Energy" parent="MARGIN/CONTAINER/TOP/resources" unique_id=1255730681 instance=ExtResource("2_2ossi")]
+layout_mode = 2
+
+[node name="Icon" parent="MARGIN/CONTAINER/TOP/resources/Energy/MARGIN/CONTAINER" parent_id_path=PackedInt32Array(1255730681, 1255730681) index="0" unique_id=2023123072]
+texture = ExtResource("3_f4gyg")
+
+[node name="Log" parent="MARGIN/CONTAINER/TOP/resources" unique_id=1087847484 instance=ExtResource("2_2ossi")]
+layout_mode = 2
+
+[node name="Icon" parent="MARGIN/CONTAINER/TOP/resources/Log/MARGIN/CONTAINER" parent_id_path=PackedInt32Array(1087847484, 1255730681) index="0" unique_id=2023123072]
+texture = ExtResource("4_swc3y")
+
+[node name="Coin2" parent="MARGIN/CONTAINER/TOP/resources" unique_id=175599181 instance=ExtResource("2_2ossi")]
+layout_mode = 2
+
+[node name="Space" type="Control" parent="MARGIN/CONTAINER" unique_id=120751023]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Footer" type="HBoxContainer" parent="MARGIN/CONTAINER" unique_id=242305525]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="-" type="Control" parent="MARGIN/CONTAINER/Footer" unique_id=483354251]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="toForest" type="Button" parent="MARGIN/CONTAINER/Footer" unique_id=1916660643]
+custom_minimum_size = Vector2(100, 0)
+custom_maximum_size = Vector2(-1, 32)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_fjvgw")
+text = "getBack()"
+
+[node name="toShop" type="Button" parent="MARGIN/CONTAINER/Footer" unique_id=916698627]
+custom_minimum_size = Vector2(100, 0)
+custom_maximum_size = Vector2(-1, 32)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_fjvgw")
+text = "shop()
+"
+
+[node name="toSleep" type="Button" parent="MARGIN/CONTAINER/Footer" unique_id=1739775548]
+custom_minimum_size = Vector2(100, 0)
+custom_maximum_size = Vector2(-1, 32)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_fjvgw")
+text = "sleep()"
+
+[connection signal="pressed" from="MARGIN/CONTAINER/Footer/toForest" to="." method="_on_to_forest_pressed"]
+[connection signal="pressed" from="MARGIN/CONTAINER/Footer/toShop" to="." method="_on_to_shop_pressed"]
+[connection signal="pressed" from="MARGIN/CONTAINER/Footer/toSleep" to="." method="_on_to_sleep_pressed"]
+
+[editable path="MARGIN/CONTAINER/TOP/resources/Energy"]
+[editable path="MARGIN/CONTAINER/TOP/resources/Log"]

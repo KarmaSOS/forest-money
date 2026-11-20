@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://w5id7xwh67gd"]
 
 [ext_resource type="Texture2D" uid="uid://cecpthtib7jhp" path="res://assets/avatar.png" id="1_0g4kb"]
-[ext_resource type="Script" uid="uid://dscewlasskcwn" path="res://scripts/player.gd" id="1_51jd6"]
+[ext_resource type="Script" uid="uid://dscewlasskcwn" path="res://scripts/Player.gd" id="1_51jd6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vivr"]
-size = Vector2(69, 80)
+size = Vector2(72, 80)
 
 [node name="Player" type="CharacterBody2D" unique_id=1671942093]
 script = ExtResource("1_51jd6")
@@ -13,5 +13,5 @@ script = ExtResource("1_51jd6")
 texture = ExtResource("1_0g4kb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1046869706]
-position = Vector2(-2.5, 4)
+position = Vector2(-1, 4)
 shape = SubResource("RectangleShape2D_1vivr")
