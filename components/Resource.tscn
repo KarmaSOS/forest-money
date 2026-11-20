@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://btela0i0x5rwp"]
 
-[ext_resource type="Texture2D" uid="uid://s1aqcm0ci0t7" path="res://assets/images/icons/coins.png" id="1_2ey05"]
+[ext_resource type="Script" uid="uid://d3qh6mrnhj43u" path="res://scripts/comResources.gd" id="1_f3pa3"]
+[ext_resource type="Texture2D" uid="uid://cwtvaymmq4e4" path="res://assets/images/icons/Coin assets.png" id="2_f3pa3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ey05"]
 content_margin_left = 0.0
@@ -20,6 +21,9 @@ custom_maximum_size = Vector2(128, 30)
 offset_right = 120.0
 offset_bottom = 26.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_2ey05")
+script = ExtResource("1_f3pa3")
+icon_texture = ExtResource("2_f3pa3")
+preview_amount = 1000
 
 [node name="MARGIN" type="MarginContainer" parent="." unique_id=794523545]
 layout_mode = 2
@@ -38,9 +42,9 @@ alignment = 1
 [node name="Icon" type="TextureRect" parent="MARGIN/CONTAINER" unique_id=2023123072]
 custom_maximum_size = Vector2(26, 26)
 layout_mode = 2
-texture = ExtResource("1_2ey05")
+texture = ExtResource("2_f3pa3")
 
 [node name="Amount" type="Label" parent="MARGIN/CONTAINER" unique_id=238933088]
 layout_mode = 2
 size_flags_horizontal = 10
-text = "000000000"
+text = "1000"

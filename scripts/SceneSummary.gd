@@ -13,4 +13,4 @@ func _process(delta: float) -> void:
 
 func _on_button_pressed() -> void:
 	GameManager.day += 1
-	get_tree().change_scene_to_file("res://Scenes/SceneForest.tscn")
+	GameManager.go_back()
