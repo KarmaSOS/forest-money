@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dk51gr6ycximo"
-path="res://.godot/imported/villain.png-01358d46f5b092cc03292add22122ee1.ctex"
+uid="uid://s1aqcm0ci0t7"
+path="res://.godot/imported/coins.png-a745c381a46e741ea904999d05f5ab3a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/villain.png"
-dest_files=["res://.godot/imported/villain.png-01358d46f5b092cc03292add22122ee1.ctex"]
+source_file="res://assets/images/icons/coins.png"
+dest_files=["res://.godot/imported/coins.png-a745c381a46e741ea904999d05f5ab3a.ctex"]
 
 [params]
 

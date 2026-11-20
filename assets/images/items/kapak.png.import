@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bw80qjuki78qb"
-path="res://.godot/imported/amphoreus.webp-2d44a5e76e6cb91208d59093eb9e43dc.ctex"
+uid="uid://b5sd20wkb8ooy"
+path="res://.godot/imported/kapak.png-2fcbf0595766bd26ae150e288eaa5ce7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/amphoreus.webp"
-dest_files=["res://.godot/imported/amphoreus.webp-2d44a5e76e6cb91208d59093eb9e43dc.ctex"]
+source_file="res://assets/images/items/kapak.png"
+dest_files=["res://.godot/imported/kapak.png-2fcbf0595766bd26ae150e288eaa5ce7.ctex"]
 
 [params]
 

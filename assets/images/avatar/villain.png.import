@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ci31hv3vbqeeo"
-path="res://.godot/imported/demigod.png-6592ec11c15439b81c858544fe7cd3d0.ctex"
+uid="uid://dk51gr6ycximo"
+path="res://.godot/imported/villain.png-671e0649c2fb87d9d335bb183eabbdcd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/demigod.png"
-dest_files=["res://.godot/imported/demigod.png-6592ec11c15439b81c858544fe7cd3d0.ctex"]
+source_file="res://assets/images/avatar/villain.png"
+dest_files=["res://.godot/imported/villain.png-671e0649c2fb87d9d335bb183eabbdcd.ctex"]
 
 [params]
 

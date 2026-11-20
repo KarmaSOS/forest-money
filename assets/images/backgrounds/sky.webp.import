@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgje1tcsr61a8"
-path="res://.godot/imported/market.webp-b766484232d277d9c26789787fb0e959.ctex"
+uid="uid://du0r3jjcsuobc"
+path="res://.godot/imported/sky.webp-3bb7ebb2509a6b98bdab94e1b0db957f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/market.webp"
-dest_files=["res://.godot/imported/market.webp-b766484232d277d9c26789787fb0e959.ctex"]
+source_file="res://assets/images/backgrounds/sky.webp"
+dest_files=["res://.godot/imported/sky.webp-3bb7ebb2509a6b98bdab94e1b0db957f.ctex"]
 
 [params]
 

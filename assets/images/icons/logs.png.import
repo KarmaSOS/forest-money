@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs5glvgpupsd8"
-path="res://.godot/imported/Jerrycan assets.png-a8242749459ea4714d9aa6221ebbcb79.ctex"
+uid="uid://c1ehjt6ii4oi1"
+path="res://.godot/imported/logs.png-3f30ce40b91ae590d05eae55ef072a2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Jerrycan assets.png"
-dest_files=["res://.godot/imported/Jerrycan assets.png-a8242749459ea4714d9aa6221ebbcb79.ctex"]
+source_file="res://assets/images/icons/logs.png"
+dest_files=["res://.godot/imported/logs.png-3f30ce40b91ae590d05eae55ef072a2c.ctex"]
 
 [params]
 

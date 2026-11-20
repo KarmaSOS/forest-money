@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwtvaymmq4e4"
-path="res://.godot/imported/Coin assets.png-c77926d9ceb645f370ecf3ecb11e7aae.ctex"
+uid="uid://crx302en1b7vb"
+path="res://.godot/imported/Korek_Kayu.png-db1f028905844d8c9b6f29c6a6071bbd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Coin assets.png"
-dest_files=["res://.godot/imported/Coin assets.png-c77926d9ceb645f370ecf3ecb11e7aae.ctex"]
+source_file="res://assets/images/items/Korek_Kayu.png"
+dest_files=["res://.godot/imported/Korek_Kayu.png-db1f028905844d8c9b6f29c6a6071bbd.ctex"]
 
 [params]
 

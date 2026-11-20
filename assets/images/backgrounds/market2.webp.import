@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5sd20wkb8ooy"
-path="res://.godot/imported/kapak.png-35e984d3aff12189d76ef03def7ad92a.ctex"
+uid="uid://ckxo86bxw1bvo"
+path="res://.godot/imported/market2.webp-232f785e1a34923920fe5358d32171e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/kapak.png"
-dest_files=["res://.godot/imported/kapak.png-35e984d3aff12189d76ef03def7ad92a.ctex"]
+source_file="res://assets/images/backgrounds/market2.webp"
+dest_files=["res://.godot/imported/market2.webp-232f785e1a34923920fe5358d32171e0.ctex"]
 
 [params]
 

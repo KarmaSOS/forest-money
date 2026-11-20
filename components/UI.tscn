@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://csen0ivqc5xqo" path="res://scripts/UI.gd" id="1_mq1n1"]
 [ext_resource type="PackedScene" uid="uid://btela0i0x5rwp" path="res://components/Resource.tscn" id="2_2ossi"]
-[ext_resource type="Texture2D" uid="uid://d1hgq0c2lhcwi" path="res://assets/icons/energy.jpg" id="3_f4gyg"]
-[ext_resource type="Texture2D" uid="uid://c1ehjt6ii4oi1" path="res://assets/icons/logs.png" id="4_swc3y"]
+[ext_resource type="Texture2D" uid="uid://d1hgq0c2lhcwi" path="res://assets/images/icons/energy.jpg" id="3_f4gyg"]
+[ext_resource type="Texture2D" uid="uid://c1ehjt6ii4oi1" path="res://assets/images/icons/logs.png" id="4_swc3y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fjvgw"]
 content_margin_left = 4.0

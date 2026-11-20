@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crx302en1b7vb"
-path="res://.godot/imported/Korek_Kayu.png-e0899d981f60373cae438bf9caa83e19.ctex"
+uid="uid://510ay4x88qmw"
+path="res://.godot/imported/platform.png-ab31debd2e51788069d4975604d6e7db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Korek_Kayu.png"
-dest_files=["res://.godot/imported/Korek_Kayu.png-e0899d981f60373cae438bf9caa83e19.ctex"]
+source_file="res://assets/images/items/platform.png"
+dest_files=["res://.godot/imported/platform.png-ab31debd2e51788069d4975604d6e7db.ctex"]
 
 [params]
 

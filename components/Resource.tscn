@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://btela0i0x5rwp"]
 
-[ext_resource type="Texture2D" uid="uid://s1aqcm0ci0t7" path="res://assets/icons/coins.png" id="1_2ey05"]
+[ext_resource type="Texture2D" uid="uid://s1aqcm0ci0t7" path="res://assets/images/icons/coins.png" id="1_2ey05"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ey05"]
 content_margin_left = 0.0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqvpt6l0ochlt"
-path="res://.godot/imported/Tree1 assets.png-2533a0788b6381f7e50798276cf0a961.ctex"
+uid="uid://cs5glvgpupsd8"
+path="res://.godot/imported/Jerrycan assets.png-abad23591b0ec52f67701c8588f36965.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tree1 assets.png"
-dest_files=["res://.godot/imported/Tree1 assets.png-2533a0788b6381f7e50798276cf0a961.ctex"]
+source_file="res://assets/images/items/Jerrycan assets.png"
+dest_files=["res://.godot/imported/Jerrycan assets.png-abad23591b0ec52f67701c8588f36965.ctex"]
 
 [params]
 
