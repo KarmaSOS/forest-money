@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://5gdusx6nd527" path="res://components/Platform.tscn" id="2_baw6o"]
 [ext_resource type="PackedScene" uid="uid://w5id7xwh67gd" path="res://components/characters/Player.tscn" id="3_2e40c"]
 [ext_resource type="PackedScene" uid="uid://ibi2b0be45pm" path="res://components/HUD.tscn" id="4_344en"]
+[ext_resource type="PackedScene" uid="uid://bnliqmofyqxtk" path="res://components/kill_zone.tscn" id="5_baw6o"]
 
 [node name="SceneForest" type="Node2D" unique_id=1446444034]
 
@@ -56,6 +57,9 @@ metadata/_edit_lock_ = true
 
 [node name="toForest" parent="CanvasLayer/Control/container/container/container_bottom" parent_id_path=PackedInt32Array(1962362687, 242305525) index="1" unique_id=865794749]
 visible = false
+
+[node name="killZone" parent="." unique_id=495784788 instance=ExtResource("5_baw6o")]
+position = Vector2(511, 842)
 
 [editable path="CanvasLayer/Control"]
 [editable path="CanvasLayer/Control/container/container/container_bottom/addMoney"]

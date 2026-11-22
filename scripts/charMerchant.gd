@@ -1,6 +1,6 @@
 extends Node2D
 
-signal interact_requested(merchant: Node)
+
 
 @export var idle_texture: Texture2D
 @export var nearby_texture: Texture2D
@@ -37,7 +37,7 @@ func _on_interact_pressed() -> void:
 	if not is_nearby:
 		return
 	scene_shop.open_shop()
-	interact_requested.emit(self)
+
 
 #cek_player(opsional)
 func _is_player(body: Node2D) -> bool:

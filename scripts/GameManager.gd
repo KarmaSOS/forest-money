@@ -3,13 +3,17 @@ extends Node
 const SAVE_PATH: String = "user://savegame.json"
 signal money_update(new_value: int)
 signal energy_update(new_value: int)
+signal inventory_update(inventory)
+
+
 
 # game variable
 const DEFAULT_DATA: Dictionary = {
 	"day": 1,
 	"energy": 100,
 	"uang": 50,
-	"skor_kerusakan_hutan": 0
+	"skor_kerusakan_hutan": 0,
+	"inventory": {}
 }
 
 var day: int = DEFAULT_DATA["day"]
@@ -25,7 +29,25 @@ var uang: int = DEFAULT_DATA["uang"]:
 		
 var skor_kerusakan_hutan: int = DEFAULT_DATA["skor_kerusakan_hutan"]
 
-# membuat dictionary untuk setiap variable
+var inventory: Dictionary = DEFAULT_DATA["inventory"].duplicate()
+
+func beli_item(item: ItemData, jumlah: int = 1) -> bool:
+	var total_harga = item.price * jumlah
+	if uang >= total_harga:
+		uang -= total_harga
+		
+		# Cek apakah item sudah ada di dalam Dictionary
+		if inventory.has(item):
+			inventory[item] += jumlah
+		else:
+			inventory[item] = jumlah
+			
+		inventory_update.emit(inventory)
+		return true
+	else:
+		print("Uang tidak cukup!")
+		return false
+
 func get_save_data() -> Dictionary:
 	return {
 		"day": day,
