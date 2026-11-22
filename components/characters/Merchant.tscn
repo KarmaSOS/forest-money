@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://tpcnkvm34av1"]
+
+[ext_resource type="Script" uid="uid://onbb3b68beva" path="res://scripts/charMerchant.gd" id="1_iawag"]
+[ext_resource type="Texture2D" uid="uid://ci31hv3vbqeeo" path="res://assets/images/avatar/demigod.png" id="2_knb7f"]
+[ext_resource type="PackedScene" uid="uid://dg8aiu1cghn8l" path="res://components/buttons/buttonAction.tscn" id="3_c06wc"]
+[ext_resource type="Texture2D" uid="uid://dk51gr6ycximo" path="res://assets/images/avatar/villain.png" id="3_ymron"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1vivr"]
+radius = 74.06078
+
+[node name="TheMerchant" type="Node2D" unique_id=209842414]
+script = ExtResource("1_iawag")
+idle_texture = ExtResource("2_knb7f")
+nearby_texture = ExtResource("3_ymron")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1176718594]
+texture = ExtResource("2_knb7f")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1152267986]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1043577669]
+shape = SubResource("CircleShape2D_1vivr")
+
+[node name="Interact" parent="." unique_id=865794749 instance=ExtResource("3_c06wc")]
+offset_left = 40.0
+offset_top = -48.0
+offset_right = 161.0
+offset_bottom = -16.0
+text = "press \"F\""
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]
+[connection signal="pressed" from="Interact" to="." method="_on_interact_pressed"]

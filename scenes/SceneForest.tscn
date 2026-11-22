@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://b323fnwhx2jks" path="res://assets/images/backgrounds/pexels-clickerhappy-1005334.jpg" id="1_5oq42"]
 [ext_resource type="PackedScene" uid="uid://5gdusx6nd527" path="res://components/Platform.tscn" id="2_baw6o"]
-[ext_resource type="PackedScene" uid="uid://w5id7xwh67gd" path="res://components/Player.tscn" id="3_2e40c"]
-[ext_resource type="PackedScene" uid="uid://ibi2b0be45pm" path="res://components/UI.tscn" id="4_344en"]
+[ext_resource type="PackedScene" uid="uid://w5id7xwh67gd" path="res://components/characters/Player.tscn" id="3_2e40c"]
+[ext_resource type="PackedScene" uid="uid://ibi2b0be45pm" path="res://components/HUD.tscn" id="4_344en"]
 
 [node name="SceneForest" type="Node2D" unique_id=1446444034]
 
@@ -54,9 +54,8 @@ offset_top = 7.0
 offset_bottom = 7.0
 metadata/_edit_lock_ = true
 
-[node name="toForest" parent="CanvasLayer/Control/MARGIN/CONTAINER/Footer" parent_id_path=PackedInt32Array(1962362687, 242305525) index="1" unique_id=1916660643]
+[node name="toForest" parent="CanvasLayer/Control/container/container/container_bottom" parent_id_path=PackedInt32Array(1962362687, 242305525) index="1" unique_id=865794749]
 visible = false
 
 [editable path="CanvasLayer/Control"]
-[editable path="CanvasLayer/Control/MARGIN/CONTAINER/TOP/resources/Energy"]
-[editable path="CanvasLayer/Control/MARGIN/CONTAINER/TOP/resources/Log"]
+[editable path="CanvasLayer/Control/container/container/container_bottom/addMoney"]

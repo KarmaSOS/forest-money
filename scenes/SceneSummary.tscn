@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ceemecv450ob1" path="res://scripts/SceneSummary.gd" id="1_g5xju"]
 [ext_resource type="Texture2D" uid="uid://bw80qjuki78qb" path="res://assets/images/backgrounds/amphoreus.webp" id="2_7irge"]
-[ext_resource type="PackedScene" uid="uid://dg8aiu1cghn8l" path="res://components/Button1.tscn" id="3_g5xju"]
+[ext_resource type="PackedScene" uid="uid://dg8aiu1cghn8l" path="res://components/buttons/buttonAction.tscn" id="3_g5xju"]
 
 [node name="SceneSummary" type="Node2D" unique_id=1446444034]
 script = ExtResource("1_g5xju")

@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 
 
 func _on_to_shop_pressed() -> void:
-	GameManager.goto_scene("res://scenes/SceneShop.tscn")
+	GameManager.goto_scene("res://scenes/SceneCity.tscn")
 
 
 func _on_to_sleep_pressed() -> void:
