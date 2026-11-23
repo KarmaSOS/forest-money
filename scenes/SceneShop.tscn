@@ -1,0 +1,228 @@
+[gd_scene format=3 uid="uid://cwmef3xc0sfb5"]
+
+[ext_resource type="Script" uid="uid://hhlpuxo487gp" path="res://scripts/SceneShop.gd" id="1_mytob"]
+[ext_resource type="StyleBox" uid="uid://2ontj730nq21" path="res://assets/theme/Normal.tres" id="2_dabn2"]
+[ext_resource type="PackedScene" uid="uid://dd0e067mcmhss" path="res://components/buttons/buttonType.tscn" id="3_hlsfd"]
+[ext_resource type="PackedScene" uid="uid://bk86o30vv0bee" path="res://components/ItemCard.tscn" id="4_lp7l6"]
+[ext_resource type="PackedScene" uid="uid://dg8aiu1cghn8l" path="res://components/buttons/buttonAction.tscn" id="5_dabn2"]
+[ext_resource type="PackedScene" uid="uid://3cpgdhnmqsi5" path="res://components/message.tscn" id="6_hlsfd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3hmb3"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_right = 20
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u7cuq"]
+content_margin_left = 20.0
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gj36p"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.81, 0.12960002, 0.31103987, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_hlsfd"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_lp7l6"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_1bh7w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hlsfd"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.155, 0.2325, 0.31, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lp7l6"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vpl1a"]
+content_margin_left = 20.0
+bg_color = Color(0.2573, 0.83, 0.60091996, 1)
+
+[node name="SceneShop" type="CanvasLayer" unique_id=405506836 node_paths=PackedStringArray("success_message", "fail_message")]
+script = ExtResource("1_mytob")
+success_message = NodePath("success")
+fail_message = NodePath("fail")
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=1743715071]
+custom_minimum_size = Vector2(800, 500)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -250.0
+offset_right = 400.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3hmb3")
+
+[node name="padding" type="MarginContainer" parent="Panel" unique_id=893645135]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="main" type="VBoxContainer" parent="Panel/padding" unique_id=680943441]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="header" type="HBoxContainer" parent="Panel/padding/main" unique_id=1220998498]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/padding/main/header" unique_id=444206880]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_u7cuq")
+text = "NEED SOMETHING?"
+vertical_alignment = 1
+
+[node name="Button1" type="Button" parent="Panel/padding/main/header" unique_id=865794749]
+custom_minimum_size = Vector2(32, 32)
+custom_maximum_size = Vector2(32, 32)
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/normal = ExtResource("2_dabn2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gj36p")
+text = "X"
+
+[node name="Content" type="HBoxContainer" parent="Panel/padding/main" unique_id=1242158779]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="SIDEBAR" type="MarginContainer" parent="Panel/padding/main/Content" unique_id=766384459]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 29
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/padding/main/Content/SIDEBAR" unique_id=2115299656]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="type" parent="Panel/padding/main/Content/SIDEBAR/VBoxContainer" unique_id=2006576623 instance=ExtResource("3_hlsfd")]
+layout_mode = 2
+button_pressed = true
+button_group = SubResource("ButtonGroup_hlsfd")
+text = "ALL"
+
+[node name="type2" parent="Panel/padding/main/Content/SIDEBAR/VBoxContainer" unique_id=1424078093 instance=ExtResource("3_hlsfd")]
+layout_mode = 2
+button_group = SubResource("ButtonGroup_lp7l6")
+text = "TOOLS"
+
+[node name="type3" parent="Panel/padding/main/Content/SIDEBAR/VBoxContainer" unique_id=1006232726 instance=ExtResource("3_hlsfd")]
+layout_mode = 2
+button_group = SubResource("ButtonGroup_1bh7w")
+text = "ETC"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/padding/main/Content" unique_id=1608922460]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="Panel/padding/main/Content/VBoxContainer" unique_id=1391921017]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/padding/main/Content/VBoxContainer/PanelContainer" unique_id=2055753212]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ITEMSLIST" type="ScrollContainer" parent="Panel/padding/main/Content/VBoxContainer/PanelContainer/MarginContainer" unique_id=987715657]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Items" type="GridContainer" parent="Panel/padding/main/Content/VBoxContainer/PanelContainer/MarginContainer/ITEMSLIST" unique_id=891753175]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 4
+
+[node name="ItemCard" parent="Panel/padding/main/Content/VBoxContainer/PanelContainer/MarginContainer/ITEMSLIST/Items" unique_id=1935382646 instance=ExtResource("4_lp7l6")]
+layout_mode = 2
+
+[node name="ItemCard2" parent="Panel/padding/main/Content/VBoxContainer/PanelContainer/MarginContainer/ITEMSLIST/Items" unique_id=1405709585 instance=ExtResource("4_lp7l6")]
+layout_mode = 2
+
+[node name="ItemCard3" parent="Panel/padding/main/Content/VBoxContainer/PanelContainer/MarginContainer/ITEMSLIST/Items" unique_id=1114851028 instance=ExtResource("4_lp7l6")]
+layout_mode = 2
+
+[node name="ItemCard4" parent="Panel/padding/main/Content/VBoxContainer/PanelContainer/MarginContainer/ITEMSLIST/Items" unique_id=841098132 instance=ExtResource("4_lp7l6")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/padding/main/Content/VBoxContainer" unique_id=480498395]
+layout_mode = 2
+alignment = 2
+
+[node name="buy" parent="Panel/padding/main/Content/VBoxContainer/HBoxContainer" unique_id=1642096799 instance=ExtResource("5_dabn2")]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_hlsfd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lp7l6")
+text = "buy()"
+
+[node name="success" parent="." unique_id=678133043 instance=ExtResource("6_hlsfd")]
+visible = false
+
+[node name="Label2" parent="success/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(678133043, 1025669439) index="0" unique_id=101874501]
+theme_override_styles/normal = SubResource("StyleBoxFlat_vpl1a")
+text = "Berhasil"
+
+[node name="RichTextLabel" parent="success/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(678133043, 1025669439) index="1" unique_id=1529379641]
+text = "Barang yang sudah dibeli tidak dapat dikembalikan lagi ya (>_<)"
+
+[node name="fail" parent="." unique_id=251748534 instance=ExtResource("6_hlsfd")]
+visible = false
+
+[connection signal="pressed" from="Panel/padding/main/Content/VBoxContainer/HBoxContainer/buy" to="." method="_on_buy_pressed"]
+[connection signal="pressed" from="success/MarginContainer/VBoxContainer/HBoxContainer/ok" to="." method="_on_success_pressed"]
+[connection signal="pressed" from="fail/MarginContainer/VBoxContainer/HBoxContainer/ok" to="." method="_on_fail_pressed"]
+
+[editable path="success"]
+[editable path="fail"]

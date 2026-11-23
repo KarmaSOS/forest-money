@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://ibi2b0be45pm"]
+
+[ext_resource type="Script" uid="uid://csen0ivqc5xqo" path="res://scripts/comUI.gd" id="1_mq1n1"]
+[ext_resource type="PackedScene" uid="uid://btela0i0x5rwp" path="res://components/infoResources.tscn" id="2_2ossi"]
+[ext_resource type="Texture2D" uid="uid://d1hgq0c2lhcwi" path="res://assets/images/icons/energy.jpg" id="3_f4gyg"]
+[ext_resource type="Texture2D" uid="uid://c1ehjt6ii4oi1" path="res://assets/images/icons/logs.png" id="4_swc3y"]
+[ext_resource type="Texture2D" uid="uid://s1aqcm0ci0t7" path="res://assets/images/icons/coins.png" id="5_f4gyg"]
+[ext_resource type="StyleBox" uid="uid://2ontj730nq21" path="res://assets/theme/Normal.tres" id="6_swc3y"]
+[ext_resource type="PackedScene" uid="uid://dg8aiu1cghn8l" path="res://components/buttons/buttonAction.tscn" id="7_415d5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4gyg"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_right = 4
+corner_detail = 1
+
+[node name="UI" type="Control" unique_id=1962362687]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mq1n1")
+
+[node name="container" type="MarginContainer" parent="." unique_id=122601098]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_vertical = 3
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="container" type="VBoxContainer" parent="container" unique_id=1112336758]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="container_top" type="HBoxContainer" parent="container/container" unique_id=180434360]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="space" type="Control" parent="container/container/container_top" unique_id=1714613515]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RESOURCES" type="HBoxContainer" parent="container/container/container_top" unique_id=42367190]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Energy" parent="container/container/container_top/RESOURCES" unique_id=1255730681 instance=ExtResource("2_2ossi")]
+layout_mode = 2
+tipe_resource = "stamina"
+icon_texture = ExtResource("3_f4gyg")
+
+[node name="Log" parent="container/container/container_top/RESOURCES" unique_id=1087847484 instance=ExtResource("2_2ossi")]
+layout_mode = 2
+tipe_resource = "log"
+icon_texture = ExtResource("4_swc3y")
+
+[node name="Coin" parent="container/container/container_top/RESOURCES" unique_id=175599181 instance=ExtResource("2_2ossi")]
+layout_mode = 2
+icon_texture = ExtResource("5_f4gyg")
+
+[node name="space" type="Control" parent="container/container" unique_id=120751023]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="container_bottom" type="HBoxContainer" parent="container/container" unique_id=242305525]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="-" type="Control" parent="container/container/container_bottom" unique_id=483354251]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="toForest" type="Button" parent="container/container/container_bottom" unique_id=865794749]
+custom_minimum_size = Vector2(100, 0)
+custom_maximum_size = Vector2(-1, 32)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("6_swc3y")
+text = "getBack()"
+
+[node name="toShop" type="Button" parent="container/container/container_bottom" unique_id=916698627]
+custom_minimum_size = Vector2(100, 0)
+custom_maximum_size = Vector2(-1, 32)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_f4gyg")
+text = "shop()
+"
+
+[node name="toSleep" type="Button" parent="container/container/container_bottom" unique_id=1739775548]
+custom_minimum_size = Vector2(100, 0)
+custom_maximum_size = Vector2(-1, 32)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_f4gyg")
+text = "sleep()"
+
+[node name="addMoney" parent="container/container/container_bottom" unique_id=1277187122 instance=ExtResource("7_415d5")]
+layout_mode = 2
+text = "addMoney()
+"
+
+[connection signal="pressed" from="container/container/container_bottom/toForest" to="." method="_on_to_forest_pressed"]
+[connection signal="pressed" from="container/container/container_bottom/toShop" to="." method="_on_to_shop_pressed"]
+[connection signal="pressed" from="container/container/container_bottom/toSleep" to="." method="_on_to_sleep_pressed"]
+[connection signal="pressed" from="container/container/container_bottom/addMoney" to="." method="_on_add_money_pressed"]
+
+[editable path="container/container/container_bottom/addMoney"]

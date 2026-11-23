@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bnliqmofyqxtk"]
+
+[ext_resource type="Script" uid="uid://dgn2idlrvcftb" path="res://scripts/killZone.gd" id="1_wdomc"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1vivr"]
+
+[node name="killZone" type="Area2D" unique_id=495784788]
+collision_mask = 2
+script = ExtResource("1_wdomc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1915749965]
+shape = SubResource("WorldBoundaryShape2D_1vivr")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://btela0i0x5rwp"]
+
+[ext_resource type="Script" uid="uid://d3qh6mrnhj43u" path="res://scripts/comResources.gd" id="1_f3pa3"]
+[ext_resource type="Texture2D" uid="uid://cwtvaymmq4e4" path="res://assets/images/icons/Coin assets.png" id="2_f3pa3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ey05"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 0.6)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_bottom_left = 3
+corner_detail = 1
+
+[node name="ItemResources" type="PanelContainer" unique_id=1624404506]
+custom_maximum_size = Vector2(128, 30)
+offset_right = 120.0
+offset_bottom = 26.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2ey05")
+script = ExtResource("1_f3pa3")
+icon_texture = ExtResource("2_f3pa3")
+preview_amount = 1000
+
+[node name="MARGIN" type="MarginContainer" parent="." unique_id=794523545]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 2
+
+[node name="CONTAINER" type="HBoxContainer" parent="MARGIN" unique_id=1255730681]
+custom_minimum_size = Vector2(140, 0)
+custom_maximum_size = Vector2(140, 26)
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="MARGIN/CONTAINER" unique_id=2023123072]
+custom_maximum_size = Vector2(26, 26)
+layout_mode = 2
+texture = ExtResource("2_f3pa3")
+
+[node name="Amount" type="Label" parent="MARGIN/CONTAINER" unique_id=238933088]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "1000"

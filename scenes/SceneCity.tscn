@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://db1b0gxgijplm"]
+
+[ext_resource type="Texture2D" uid="uid://ckxo86bxw1bvo" path="res://assets/images/backgrounds/market2.webp" id="1_vf6ys"]
+[ext_resource type="PackedScene" uid="uid://5gdusx6nd527" path="res://components/Platform.tscn" id="2_bhb1d"]
+[ext_resource type="PackedScene" uid="uid://w5id7xwh67gd" path="res://components/characters/Player.tscn" id="3_yf2c4"]
+[ext_resource type="PackedScene" uid="uid://ibi2b0be45pm" path="res://components/HUD.tscn" id="4_6c77o"]
+[ext_resource type="PackedScene" uid="uid://bnliqmofyqxtk" path="res://components/kill_zone.tscn" id="5_yf2c4"]
+[ext_resource type="PackedScene" uid="uid://tpcnkvm34av1" path="res://components/characters/Merchant.tscn" id="5_yndl3"]
+[ext_resource type="PackedScene" uid="uid://cwmef3xc0sfb5" path="res://scenes/SceneShop.tscn" id="6_6c77o"]
+
+[sub_resource type="GDScript" id="GDScript_bhb1d"]
+script/source = "extends Node2D
+
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="SceneCity" type="Node2D" unique_id=1446444034]
+script = SubResource("GDScript_bhb1d")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1140229353]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -149.00003
+offset_top = -25.00003
+offset_right = 3307.0
+offset_bottom = 1919.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_vf6ys")
+expand_mode = 1
+
+[node name="Platform" parent="." unique_id=613534105 instance=ExtResource("2_bhb1d")]
+position = Vector2(196.99994, 489.99997)
+scale = Vector2(0.4, 0.4)
+
+[node name="Platform2" parent="." unique_id=1512056455 instance=ExtResource("2_bhb1d")]
+position = Vector2(387.99997, 489.99997)
+scale = Vector2(0.4, 0.4)
+
+[node name="Platform3" parent="." unique_id=518987076 instance=ExtResource("2_bhb1d")]
+position = Vector2(578.99994, 489.99997)
+scale = Vector2(0.4, 0.4)
+
+[node name="Platform4" parent="." unique_id=780149944 instance=ExtResource("2_bhb1d")]
+position = Vector2(770, 489.99997)
+scale = Vector2(0.4, 0.4)
+
+[node name="Player" parent="." unique_id=1671942093 instance=ExtResource("3_yf2c4")]
+position = Vector2(475, 319)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1667904699]
+position = Vector2(1, -30)
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=335407916]
+
+[node name="Control" parent="HUD" unique_id=1962362687 instance=ExtResource("4_6c77o")]
+offset_top = 7.0
+offset_bottom = 7.0
+metadata/_edit_lock_ = true
+
+[node name="toShop" parent="HUD/Control/container/container/container_bottom" parent_id_path=PackedInt32Array(1962362687, 242305525) index="2" unique_id=916698627]
+visible = false
+
+[node name="killZone" parent="HUD" unique_id=495784788 instance=ExtResource("5_yf2c4")]
+position = Vector2(558, 813)
+
+[node name="SceneShop" parent="." unique_id=405506836 instance=ExtResource("6_6c77o")]
+
+[node name="TheMerchant" parent="." unique_id=209842414 node_paths=PackedStringArray("scene_shop") instance=ExtResource("5_yndl3")]
+position = Vector2(137, 423)
+scene_shop = NodePath("../SceneShop")
+
+[node name="Interact" parent="TheMerchant" index="2" unique_id=865794749]
+offset_left = -61.0
+offset_top = -89.0
+offset_right = 60.0
+offset_bottom = -57.0
+
+[editable path="HUD/Control"]
+[editable path="HUD/Control/container/container/container_bottom/addMoney"]
+[editable path="TheMerchant"]
