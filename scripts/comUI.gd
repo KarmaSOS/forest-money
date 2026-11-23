@@ -23,4 +23,4 @@ func _on_to_forest_pressed() -> void:
 
 
 func _on_add_money_pressed() -> void:
-	GameManager.uang += 10
+	GameManager.money += 10

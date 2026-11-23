@@ -25,13 +25,17 @@ func _ready() -> void:
 		
 	match tipe_resource:
 		"uang":
-			_update_text(GameManager.uang)
+			_update_text(GameManager.money)
 			GameManager.money_update.connect(_update_text)
 		"energy":
 			_update_text(GameManager.energy)
 			GameManager.energy_update.connect(_update_text)
 		"log":
-			_update_text(0)
+			_update_text(GameManager.get_item_count("log"))
+			GameManager.inventory_update.connect(func(id, amount):
+				if id == "log":
+					_update_text(amount)
+			)
 
 func _update_text(nilai: int) -> void:
 	$MARGIN/CONTAINER/Amount.text = str(nilai)

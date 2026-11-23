@@ -1,0 +1,152 @@
+[gd_scene format=3 uid="uid://bk86o30vv0bee"]
+
+[ext_resource type="Script" uid="uid://dgk4b0eb04onp" path="res://scripts/itemCard.gd" id="1_0pgxt"]
+[ext_resource type="Texture2D" uid="uid://b5sd20wkb8ooy" path="res://assets/images/items/kapak.png" id="1_3kyt0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3kyt0"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.18, 0.18, 0.18, 0.6)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.31, 0.31, 0.31, 1)
+border_blend = true
+corner_radius_top_right = 8
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2pp6"]
+content_margin_left = 4.0
+bg_color = Color(0.47058824, 0.54509807, 0.9607843, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0pgxt"]
+content_margin_left = 4.0
+bg_color = Color(0.4704, 0.54384005, 0.96, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_blend = true
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0sxyj"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+
+[node name="ItemCard" type="PanelContainer" unique_id=1935382646]
+custom_minimum_size = Vector2(160, 0)
+custom_maximum_size = Vector2(160, -1)
+offset_right = 140.0
+offset_bottom = 200.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3kyt0")
+script = ExtResource("1_0pgxt")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=707083158]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2089835774]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=219750397]
+layout_mode = 2
+
+[node name="item_type" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=46097682]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_d2pp6")
+text = "Tool"
+
+[node name="stock" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1750526072]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 0)
+custom_maximum_size = Vector2(30, -1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_0pgxt")
+text = "Stock"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="image" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=1185465157]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Icon" type="HBoxContainer" parent="MarginContainer/VBoxContainer/image" unique_id=2129817561]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="itemIcon" type="TextureRect" parent="MarginContainer/VBoxContainer/image/Icon" unique_id=2074981887]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 120)
+custom_maximum_size = Vector2(120, 120)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("1_3kyt0")
+expand_mode = 2
+
+[node name="item_name" type="Label" parent="MarginContainer/VBoxContainer" unique_id=808168992]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_0sxyj")
+text = "Kapak"
+horizontal_alignment = 1
+
+[node name="item_description" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=990243614]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.63, 0.63, 0.63, 1)
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
+text = "aku adalah kapak yang bisa digunakan untuk menebang pohon"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=256537951]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 2
+
+[node name="item_price" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2" unique_id=273411801]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 0)
+custom_maximum_size = Vector2(30, -1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_0pgxt")
+text = "Price"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="gui_input" from="MarginContainer/VBoxContainer/HBoxContainer/item_type" to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/HBoxContainer/item_type" to="." method="_on_type_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/VBoxContainer/HBoxContainer/item_type" to="." method="_on_type_mouse_exited"]

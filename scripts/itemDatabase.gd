@@ -11,8 +11,9 @@ const RAW_ITEMS: Array[Dictionary] = [
 		"price": 100,
 		"short_desc": "digunakan untuk menembang kayu... ya",
 		"icon_path": "res://assets/images/items/kapak.png",
-		"stackable": false,
-		"max_stack": 1,
+		"stackable": true,
+		"max_stack": 4,
+		"default_stock" : 64,
 		"stats": {
 			"damage": 10,
 			"stamina_cost": 5
@@ -26,8 +27,9 @@ const RAW_ITEMS: Array[Dictionary] = [
 		"price": 40,
 		"short_desc": "bahan fosil terbaik abad ini",
 		"icon_path": "res://assets/images/items/Jerrycan assets.png",
-		"stackable": false,
-		"max_stack": 1,
+		"stackable": true,
+		"max_stack": 4,
+		"default_stock" : 64,
 		"stats": {
 			"damage": 0,
 			"stamina_cost": 0
@@ -44,9 +46,25 @@ const RAW_ITEMS: Array[Dictionary] = [
 		"short_desc": "untuk menyulut api",
 		"icon_path": "res://assets/images/items/Korek_Kayu.png",
 		"stackable": true,
-		"max_stack": 99,
+		"max_stack": 64,
+		"default_stock" : 64,
 		"stats": {
 			"damage": 0
+		},
+		"effects": []
+	},
+	{
+		"id": "log",
+		"item_name": "log",
+		"type": "material",
+		"price": 10,
+		"short_desc": "pohon yang telah mati",
+		"icon_path": "res://assets/images/icons/logs.png",
+		"stackable": true,
+		"max_stack": 800,
+		"default_stock" : 64,
+		"stats": {
+			"damage": 10
 		},
 		"effects": []
 	},

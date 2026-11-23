@@ -11,6 +11,7 @@ extends Resource
 
 @export var stackable: bool = true
 @export var max_stack: int = 99
+@export var default_stock: int = 0
 
 @export var stats: Dictionary = {}
 @export var effects: Array[Dictionary] = []
@@ -31,6 +32,7 @@ static func from_dict(data: Dictionary) -> ItemData:
 	
 	item.stackable = bool(data.get("stackable", true))
 	item.max_stack = int(data.get("max_stack", 99 if item.stackable else 1))
+	item.default_stock = int(data.get("default_stock", 0))
 	
 	var raw_stats = data.get("stats", {})
 	if raw_stats is Dictionary:
