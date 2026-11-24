@@ -27,9 +27,7 @@ var money: int = DEFAULT_DATA["money"]:
 		money = value
 		money_update.emit(money)
 var skor_kerusakan_hutan: int = DEFAULT_DATA["skor_kerusakan_hutan"]
-var inventory: Dictionary = DEFAULT_DATA["inventory"].duplicate():
-	set(value):
-		inventory[value.id] = value
+var inventory: Dictionary = DEFAULT_DATA["inventory"].duplicate()
 
 
 var shop_stock: Dictionary = {}
@@ -86,18 +84,16 @@ func sell_item(item_id : String, request: int = 1) -> bool:
 	if request > current_stock:
 		print("item tidak cukup")
 		return false
-	else:
-		var item = ItemDatabase.get_item(item_id);
-		if item == null: return false
-		
-		money += item.price * request
-		sub_item(item_id, request)
-		
-		money_update.emit(money)
-		
+	
+	var item = ItemDatabase.get_item(item_id);
+	if item == null: return false
+	
+	money += item.price * request
+	sub_item(item_id, request)
+	
 
-		print("pembelian berhasil")
-		return true
+	print("pembelian berhasil")
+	return true
 
 func add_item(item_id: String, jumlah: int =1)-> void:
 	if inventory.has(item_id):
@@ -177,7 +173,7 @@ func _ready():
 	load_game()
 	
 func get_item_count(id: String) -> int:
-	return inventory.get(id,0)
+	return inventory.get(id, 0)
 	
 #SCENE
 var previous_scene_path: String = ""

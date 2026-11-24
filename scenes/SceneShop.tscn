@@ -390,9 +390,10 @@ text = "quantity:"
 layout_mode = 2
 alignment = 1
 
-[node name="amount" type="SpinBox" parent="Panel/padding/main/Content/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer" unique_id=1204079863]
+[node name="quantity" type="SpinBox" parent="Panel/padding/main/Content/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer" unique_id=1204079863]
 unique_name_in_owner = true
 layout_mode = 2
+value = 1.0
 rounded = true
 alignment = 1
 
@@ -448,8 +449,9 @@ text = ""
 
 [connection signal="pressed" from="Panel/padding/main/HBoxContainer/buy_display" to="." method="_on_buy_display_pressed"]
 [connection signal="pressed" from="Panel/padding/main/HBoxContainer/sell_display" to="." method="_on_sell_display_pressed"]
-[connection signal="changed" from="Panel/padding/main/Content/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/amount" to="." method="_on_amount_changed"]
-[connection signal="value_changed" from="Panel/padding/main/Content/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/amount" to="." method="_on_amount_value_changed"]
+[connection signal="changed" from="Panel/padding/main/Content/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/quantity" to="." method="_on_amount_changed"]
+[connection signal="value_changed" from="Panel/padding/main/Content/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/quantity" to="." method="_on_quantity_value_changed"]
+[connection signal="value_changed" from="Panel/padding/main/Content/VBoxContainer/HBoxContainer/HBoxContainer/VBoxContainer/quantity" to="." method="_on_amount_value_changed"]
 [connection signal="pressed" from="Panel/padding/main/Content/VBoxContainer/HBoxContainer/buy" to="." method="_on_buy_pressed"]
 [connection signal="pressed" from="Panel/padding/main/Content/VBoxContainer/HBoxContainer/sell" to="." method="_on_sell_pressed"]
 [connection signal="pressed" from="success/MarginContainer/VBoxContainer/HBoxContainer/ok" to="." method="_on_success_pressed"]

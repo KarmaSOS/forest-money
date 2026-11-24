@@ -21,6 +21,10 @@ func _ready() -> void:
 		if item_id == item_data.id:
 			_update_stock(value)
 	)
+	GameManager.inventory_update.connect(func(item_id, value):
+		if item_id == item_data.id:
+			_update_stock(value)
+	)
 	var base_style := get_theme_stylebox("panel")
 	if base_style is StyleBoxFlat:
 		normal_style = base_style.duplicate()
@@ -49,7 +53,7 @@ func set_selected(yes: bool) -> void:
 		is_selected = false
 		add_theme_stylebox_override("panel", normal_style)
 
-func setup(data: ItemData) -> void:
+func setup(data: ItemData, buying: bool) -> void:
 	item_data = data
 	if item_data == null:
 		return
@@ -73,7 +77,10 @@ func setup(data: ItemData) -> void:
 			icon_rect.texture = null
 	
 	if stock_label:
-		stock_label.text = str(GameManager.get_stock(item_data.id))
+		if buying:
+			stock_label.text = str(GameManager.get_stock(item_data.id))
+		else: 
+			stock_label.text = str(GameManager.get_item_count(item_data.id))
 
 func _on_mouse_entered() -> void:
 	add_theme_stylebox_override("panel", hover_style)
