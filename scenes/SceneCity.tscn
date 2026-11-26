@@ -26,21 +26,12 @@ func _process(delta: float) -> void:
 [node name="SceneCity" type="Node2D" unique_id=1446444034]
 script = SubResource("GDScript_bhb1d")
 
-[node name="Background" type="TextureRect" parent="." unique_id=1140229353]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -149.00003
-offset_top = -25.00003
-offset_right = 3307.0
-offset_bottom = 1919.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.4, 0.4)
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1619458188]
+scroll_scale = Vector2(0.4, 0.4)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1877499955]
+position = Vector2(410, 317)
 texture = ExtResource("1_vf6ys")
-expand_mode = 1
 
 [node name="Platform" parent="." unique_id=613534105 instance=ExtResource("2_bhb1d")]
 position = Vector2(196.99994, 489.99997)

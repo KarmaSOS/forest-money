@@ -6,13 +6,21 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vivr"]
 size = Vector2(72, 80)
 
-[node name="Player" type="CharacterBody2D" unique_id=1671942093 groups=["player"]]
+[node name="Player" type="CharacterBody2D" unique_id=921200611 groups=["player"]]
 collision_layer = 2
 script = ExtResource("1_51jd6")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=396767375]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=902270682]
 texture = ExtResource("1_0g4kb")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1046869706]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1105706409]
 position = Vector2(-1, 4)
 shape = SubResource("RectangleShape2D_1vivr")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1490323930]
+position = Vector2(1, -109)
+process_callback = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 12.0
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 12.0
