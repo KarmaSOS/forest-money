@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="forest-money-v1"
-run/main_scene="uid://2s0rcvuk70q6"
+run/main_scene="uid://dmk1n261ko8mp"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -24,7 +24,6 @@ config/icon="res://icon.svg"
 ItemDatabase="*uid://comautnud2xqh"
 GameManager="*uid://l7jdnwqhfgxs"
 DialogueManager="*uid://c3rodes2l3gxb"
-
 
 [display]
 

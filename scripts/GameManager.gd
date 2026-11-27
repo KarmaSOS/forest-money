@@ -1,12 +1,6 @@
 extends Node
 
 const SAVE_PATH: String = "user://savegame.json"
-signal money_update(new_value: int)
-signal energy_update(new_value: int)
-signal inventory_update(item_id: String, new_value: int)
-signal stock_update(item_id: String, new_value: int)
-
-# game variable
 const DEFAULT_DATA: Dictionary = {
 	"day": 1,
 	"energy": 100,
@@ -16,6 +10,19 @@ const DEFAULT_DATA: Dictionary = {
 		"log" : 100,
 	}
 }
+
+signal money_update(new_value: int)
+signal energy_update(new_value: int)
+signal inventory_update(item_id: String, new_value: int)
+signal stock_update(item_id: String, new_value: int)
+signal held_update(held_item: ItemData)
+
+var previous_scene_path: String = ""
+
+var held_item: ItemData= null:
+	set(value):
+		held_item = value
+		held_update.emit(value)
 
 var day: int = DEFAULT_DATA["day"]
 var energy: int = DEFAULT_DATA["energy"]:
@@ -28,25 +35,20 @@ var money: int = DEFAULT_DATA["money"]:
 		money_update.emit(money)
 var skor_kerusakan_hutan: int = DEFAULT_DATA["skor_kerusakan_hutan"]
 var inventory: Dictionary = DEFAULT_DATA["inventory"].duplicate()
-
-
 var shop_stock: Dictionary = {}
+
 func restock_shop() -> void:
 	shop_stock.clear()
 	for item in ItemDatabase.get_all_items():
 		shop_stock[item.id] = item.default_stock
 	print("hasil restock", shop_stock)
 	
-		
 func get_stock(item_id: String) -> Variant:
 	if item_id == "":
 		return shop_stock.duplicate()
 	else:
-		print("mencari stock")
 		return shop_stock.get(item_id, 0)
 	
-	
-
 func buy_item(item_id: String, request: int = 1) -> bool:
 	var item = ItemDatabase.get_item(item_id)
 	if item == null:
@@ -119,13 +121,11 @@ func get_inventory_items(filter_type: String = "all") -> Array[ItemData]:
 		if inventory[item_id] > 0:
 			var item_data: ItemData = ItemDatabase.get_item(item_id)
 			
-			# Jika data valid, cek apakah sesuai dengan tab filter (all / tool / seed)
 			if item_data != null:
 				if filter_type.is_empty() or filter_type == "all" or item_data.type == filter_type:
 					daftar_item.append(item_data)
 					
 	return daftar_item
-
 
 func get_save_data() -> Dictionary:
 	return {
@@ -134,14 +134,12 @@ func get_save_data() -> Dictionary:
 		"money": money,
 		"skor_kerusakan_hutan": skor_kerusakan_hutan
 	}
-
-# menyimpan variable ke user data
+	
 func save_game():
 	var file := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	if file:
 		file.store_string(JSON.stringify(get_save_data(), "\t")) # "\t" agar file JSON rapi & mudah dibaca
 		print("Game berhasil disimpan!")
-
 
 func load_game():
 	if not FileAccess.file_exists(SAVE_PATH):
@@ -174,9 +172,6 @@ func _ready():
 	
 func get_item_count(id: String) -> int:
 	return inventory.get(id, 0)
-	
-#SCENE
-var previous_scene_path: String = ""
 
 func goto_scene(target_path: String) -> void:
 	if get_tree().current_scene:

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://d4amo5setdnsg"]
+
+[ext_resource type="Script" uid="uid://da8m8e2gbcs7h" path="res://components/characters/held_item/held_item.gd" id="1_jfx34"]
+[ext_resource type="Texture2D" uid="uid://b5sd20wkb8ooy" path="res://assets/images/items/kapak.png" id="2_bhvg3"]
+
+[node name="HeldItem" type="Node2D" unique_id=1058586062]
+script = ExtResource("1_jfx34")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1636526506]
+unique_name_in_owner = true
+position = Vector2(9, -3)
+texture = ExtResource("2_bhvg3")

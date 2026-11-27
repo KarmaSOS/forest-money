@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://bfkjtcxk60xhn"]
+[gd_scene format=4 uid="uid://dmk1n261ko8mp"]
 
 [ext_resource type="Script" uid="uid://ba04dae8aqyt2" path="res://scripts/SceneForest.gd" id="1_2e40c"]
 [ext_resource type="Texture2D" uid="uid://b323fnwhx2jks" path="res://assets/images/backgrounds/pexels-clickerhappy-1005334.jpg" id="1_5oq42"]

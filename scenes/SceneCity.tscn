@@ -1,12 +1,12 @@
-[gd_scene format=3 uid="uid://db1b0gxgijplm"]
+[gd_scene format=3 uid="uid://cblc6x7xcoetb"]
 
 [ext_resource type="Texture2D" uid="uid://ckxo86bxw1bvo" path="res://assets/images/backgrounds/market2.webp" id="1_vf6ys"]
-[ext_resource type="PackedScene" uid="uid://5gdusx6nd527" path="res://components/Platform.tscn" id="2_bhb1d"]
+[ext_resource type="PackedScene" uid="uid://cq1xgcyhkxdta" path="res://components/Platform.tscn" id="2_bhb1d"]
 [ext_resource type="PackedScene" uid="uid://w5id7xwh67gd" path="res://components/characters/Player.tscn" id="3_yf2c4"]
-[ext_resource type="PackedScene" uid="uid://ibi2b0be45pm" path="res://components/HUD.tscn" id="4_6c77o"]
-[ext_resource type="PackedScene" uid="uid://bnliqmofyqxtk" path="res://components/kill_zone.tscn" id="5_yf2c4"]
+[ext_resource type="PackedScene" uid="uid://voe0ryps4hu6" path="res://components/HUD.tscn" id="4_6c77o"]
+[ext_resource type="PackedScene" uid="uid://bf8eptfsvckm3" path="res://components/kill_zone.tscn" id="5_yf2c4"]
 [ext_resource type="PackedScene" uid="uid://tpcnkvm34av1" path="res://components/characters/Merchant.tscn" id="5_yndl3"]
-[ext_resource type="PackedScene" uid="uid://cwmef3xc0sfb5" path="res://scenes/SceneShop.tscn" id="6_6c77o"]
+[ext_resource type="PackedScene" uid="uid://go5s6vxaxyt0" path="res://scenes/SceneShop.tscn" id="6_6c77o"]
 
 [sub_resource type="GDScript" id="GDScript_bhb1d"]
 script/source = "extends Node2D
@@ -52,7 +52,7 @@ scale = Vector2(0.4, 0.4)
 [node name="Player" parent="." unique_id=1671942093 instance=ExtResource("3_yf2c4")]
 position = Vector2(475, 319)
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1667904699]
+[node name="Camera2D2" type="Camera2D" parent="Player" unique_id=1667904699]
 position = Vector2(1, -30)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true

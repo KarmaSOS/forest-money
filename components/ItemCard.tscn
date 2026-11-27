@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bk86o30vv0bee"]
+[gd_scene format=3 uid="uid://4lvanpvw8c70"]
 
 [ext_resource type="Script" uid="uid://dgk4b0eb04onp" path="res://scripts/itemCard.gd" id="1_0pgxt"]
 [ext_resource type="Texture2D" uid="uid://b5sd20wkb8ooy" path="res://assets/images/items/kapak.png" id="1_3kyt0"]

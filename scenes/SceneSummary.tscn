@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://oejsq2fd55n3"]
+[gd_scene format=3 uid="uid://df74ajm6eoo4i"]
 
 [ext_resource type="Script" uid="uid://ceemecv450ob1" path="res://scripts/SceneSummary.gd" id="1_g5xju"]
 [ext_resource type="Texture2D" uid="uid://bw80qjuki78qb" path="res://assets/images/backgrounds/amphoreus.webp" id="2_7irge"]

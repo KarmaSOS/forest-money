@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://be2psiv3qvd4b"]
+[gd_scene format=3 uid="uid://b3ibniindnkp"]
 
 [ext_resource type="Script" uid="uid://7ynjp424ib20" path="res://scripts/comTree.gd" id="1_cu3p6"]
 [ext_resource type="Texture2D" uid="uid://cj8dhxln3mahw" path="res://assets/images/items/young.png" id="2_kwbku"]

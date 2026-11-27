@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://ccpykfbkyrl5t"]
+
+[ext_resource type="Script" uid="uid://bqvxvth2ndc5k" path="res://components/hotbar/hotbar.gd" id="1_d6vli"]
+[ext_resource type="PackedScene" uid="uid://b8hvqgtal0bud" path="res://components/hotbar/slot.tscn" id="2_584cn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7xx1"]
+content_margin_left = 4.0
+content_margin_top = 3.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.3, 0.3, 0.3, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_detail = 1
+
+[node name="Hotbar" type="Control" unique_id=359135481]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_d6vli")
+slot_scene = ExtResource("2_584cn")
+slot_count = 6
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=144018463]
+layout_mode = 1
+offset_right = 48.0
+offset_bottom = 48.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_w7xx1")
+
+[node name="slot_container" type="HBoxContainer" parent="PanelContainer" unique_id=460865429]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="." unique_id=598904790]
+layout_mode = 0
+offset_left = 196.0
+offset_top = -48.0
+offset_right = 236.0
+offset_bottom = -25.0
+
+[connection signal="mouse_entered" from="PanelContainer/slot_container/slot" to="PanelContainer/slot_container/slot" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PanelContainer/slot_container/slot" to="PanelContainer/slot_container/slot" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PanelContainer/slot_container/@PanelContainer@59340" to="PanelContainer/slot_container/@PanelContainer@59340" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PanelContainer/slot_container/@PanelContainer@59340" to="PanelContainer/slot_container/@PanelContainer@59340" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PanelContainer/slot_container/@PanelContainer@59341" to="PanelContainer/slot_container/@PanelContainer@59341" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PanelContainer/slot_container/@PanelContainer@59341" to="PanelContainer/slot_container/@PanelContainer@59341" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PanelContainer/slot_container/@PanelContainer@59342" to="PanelContainer/slot_container/@PanelContainer@59342" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PanelContainer/slot_container/@PanelContainer@59342" to="PanelContainer/slot_container/@PanelContainer@59342" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PanelContainer/slot_container/@PanelContainer@59343" to="PanelContainer/slot_container/@PanelContainer@59343" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PanelContainer/slot_container/@PanelContainer@59343" to="PanelContainer/slot_container/@PanelContainer@59343" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="PanelContainer/slot_container/@PanelContainer@59344" to="PanelContainer/slot_container/@PanelContainer@59344" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PanelContainer/slot_container/@PanelContainer@59344" to="PanelContainer/slot_container/@PanelContainer@59344" method="_on_mouse_exited"]

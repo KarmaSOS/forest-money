@@ -1,12 +1,13 @@
-[gd_scene format=3 uid="uid://ibi2b0be45pm"]
+[gd_scene format=3 uid="uid://voe0ryps4hu6"]
 
 [ext_resource type="Script" uid="uid://csen0ivqc5xqo" path="res://scripts/comUI.gd" id="1_mq1n1"]
-[ext_resource type="PackedScene" uid="uid://btela0i0x5rwp" path="res://components/infoResources.tscn" id="2_2ossi"]
+[ext_resource type="PackedScene" uid="uid://crcna6ea1mxe6" path="res://components/infoResources.tscn" id="2_2ossi"]
 [ext_resource type="Texture2D" uid="uid://d1hgq0c2lhcwi" path="res://assets/images/icons/energy.jpg" id="3_f4gyg"]
 [ext_resource type="Texture2D" uid="uid://c1ehjt6ii4oi1" path="res://assets/images/icons/logs.png" id="4_swc3y"]
 [ext_resource type="Texture2D" uid="uid://s1aqcm0ci0t7" path="res://assets/images/icons/coins.png" id="5_f4gyg"]
 [ext_resource type="StyleBox" uid="uid://2ontj730nq21" path="res://assets/theme/Normal.tres" id="6_swc3y"]
 [ext_resource type="PackedScene" uid="uid://dg8aiu1cghn8l" path="res://components/buttons/buttonAction.tscn" id="7_415d5"]
+[ext_resource type="PackedScene" uid="uid://ccpykfbkyrl5t" path="res://components/hotbar/hotbar.tscn" id="8_i6s0m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4gyg"]
 content_margin_left = 4.0
@@ -108,6 +109,13 @@ text = "sleep()"
 layout_mode = 2
 text = "addMoney()
 "
+
+[node name="Hotbar" parent="." unique_id=359135481 instance=ExtResource("8_i6s0m")]
+layout_mode = 0
+offset_left = 367.0
+offset_top = 534.0
+offset_right = 367.0
+offset_bottom = 534.0
 
 [connection signal="pressed" from="container/container/container_bottom/toForest" to="." method="_on_to_forest_pressed"]
 [connection signal="pressed" from="container/container/container_bottom/toShop" to="." method="_on_to_shop_pressed"]
