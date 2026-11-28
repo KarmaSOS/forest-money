@@ -1,7 +1,8 @@
-[gd_scene format=3 uid="uid://voe0ryps4hu6"]
+[gd_scene format=3 uid="uid://b4fr2vji4r8xt"]
 
-[ext_resource type="Script" uid="uid://csen0ivqc5xqo" path="res://scripts/comUI.gd" id="1_mq1n1"]
+[ext_resource type="Script" uid="uid://csen0ivqc5xqo" path="res://components/hud/HUD.gd" id="1_g02rk"]
 [ext_resource type="PackedScene" uid="uid://crcna6ea1mxe6" path="res://components/infoResources.tscn" id="2_2ossi"]
+[ext_resource type="PackedScene" uid="uid://ckk4blnboggae" path="res://components/hud/progress.tscn" id="2_pb3dh"]
 [ext_resource type="Texture2D" uid="uid://d1hgq0c2lhcwi" path="res://assets/images/icons/energy.jpg" id="3_f4gyg"]
 [ext_resource type="Texture2D" uid="uid://c1ehjt6ii4oi1" path="res://assets/images/icons/logs.png" id="4_swc3y"]
 [ext_resource type="Texture2D" uid="uid://s1aqcm0ci0t7" path="res://assets/images/icons/coins.png" id="5_f4gyg"]
@@ -29,13 +30,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_mq1n1")
+mouse_filter = 2
+script = ExtResource("1_g02rk")
 
 [node name="container" type="MarginContainer" parent="." unique_id=122601098]
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 size_flags_vertical = 3
+mouse_filter = 2
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 40
@@ -43,11 +46,45 @@ theme_override_constants/margin_bottom = 40
 
 [node name="container" type="VBoxContainer" parent="container" unique_id=1112336758]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 20
 
 [node name="container_top" type="HBoxContainer" parent="container/container" unique_id=180434360]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="container/container/container_top" unique_id=974886623]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="container/container/container_top/VBoxContainer" unique_id=1298768532]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="progress_damage" parent="container/container/container_top/VBoxContainer/HBoxContainer" unique_id=1023374392 instance=ExtResource("2_pb3dh")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="forest_damage" type="Label" parent="container/container/container_top/VBoxContainer/HBoxContainer" unique_id=444714348]
+unique_name_in_owner = true
+layout_mode = 2
+text = "test"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="container/container/container_top/VBoxContainer" unique_id=123367183]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="progress_heat" parent="container/container/container_top/VBoxContainer/HBoxContainer2" unique_id=603515830 instance=ExtResource("2_pb3dh")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="forest_heat" type="Label" parent="container/container/container_top/VBoxContainer/HBoxContainer2" unique_id=311114794]
+unique_name_in_owner = true
+layout_mode = 2
+text = "test"
 
 [node name="space" type="Control" parent="container/container/container_top" unique_id=1714613515]
 layout_mode = 2
@@ -75,13 +112,22 @@ icon_texture = ExtResource("5_f4gyg")
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="container_bottom" type="HBoxContainer" parent="container/container" unique_id=242305525]
-custom_minimum_size = Vector2(0, 64)
+[node name="hotbar" type="HBoxContainer" parent="container/container" unique_id=629656532]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Hotbar" parent="container/container/hotbar" unique_id=359135481 instance=ExtResource("8_i6s0m")]
 layout_mode = 2
 
-[node name="-" type="Control" parent="container/container/container_bottom" unique_id=483354251]
+[node name="space2" type="Control" parent="container/container/hotbar" unique_id=943283320]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="container_bottom" type="HBoxContainer" parent="container/container" unique_id=242305525]
+layout_mode = 2
 
 [node name="toForest" type="Button" parent="container/container/container_bottom" unique_id=865794749]
 custom_minimum_size = Vector2(100, 0)
@@ -110,12 +156,12 @@ layout_mode = 2
 text = "addMoney()
 "
 
-[node name="Hotbar" parent="." unique_id=359135481 instance=ExtResource("8_i6s0m")]
-layout_mode = 0
-offset_left = 367.0
-offset_top = 534.0
-offset_right = 367.0
-offset_bottom = 534.0
+[node name="-" type="Control" parent="container/container/container_bottom" unique_id=483354251]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="skill" parent="container/container/container_bottom" unique_id=2029529778 instance=ExtResource("7_415d5")]
+layout_mode = 2
 
 [connection signal="pressed" from="container/container/container_bottom/toForest" to="." method="_on_to_forest_pressed"]
 [connection signal="pressed" from="container/container/container_bottom/toShop" to="." method="_on_to_shop_pressed"]

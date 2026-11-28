@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://b3ibniindnkp"]
+
+[ext_resource type="Script" uid="uid://7ynjp424ib20" path="res://components/tree/comTree.gd" id="1_cu3p6"]
+[ext_resource type="Texture2D" uid="uid://cj8dhxln3mahw" path="res://assets/images/items/young.png" id="2_kwbku"]
+[ext_resource type="Texture2D" uid="uid://du5l36wfebdgu" path="res://assets/images/items/old.png" id="3_ptin7"]
+[ext_resource type="Texture2D" uid="uid://c728m16m6wi68" path="res://assets/images/items/dry.png" id="4_djdpx"]
+[ext_resource type="Shader" uid="uid://cjnavdjgx5bvn" path="res://components/tree/outline_shader.gdshader" id="5_up20s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r7al7"]
+shader = ExtResource("5_up20s")
+shader_parameter/active = false
+shader_parameter/glow_color = Color(1, 0.95, 0.7, 1)
+shader_parameter/glow_size = 3.0
+shader_parameter/glow_intensity = 1.5
+shader_parameter/hit_tint = Color(1, 1, 1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vivr"]
+size = Vector2(36, 56)
+
+[sub_resource type="Gradient" id="Gradient_3jpvo"]
+colors = PackedColorArray(0.62, 0, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yfyt0"]
+gradient = SubResource("Gradient_3jpvo")
+
+[sub_resource type="Gradient" id="Gradient_up20s"]
+colors = PackedColorArray(1, 0.06999999, 0.06999999, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3jpvo"]
+gradient = SubResource("Gradient_up20s")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8vrlf"]
+particle_flag_disable_z = true
+particle_flag_damping_as_friction = true
+particle_flag_inherit_emitter_scale = true
+emission_shape = 1
+emission_sphere_radius = 4.26
+direction = Vector3(1, -1, 0)
+spread = 75.0
+initial_velocity_min = 60.0
+initial_velocity_max = 264.19
+gravity = Vector3(0, 400, 0)
+damping_min = 0.4
+damping_max = 12.817
+color_ramp = SubResource("GradientTexture1D_3jpvo")
+color_initial_ramp = SubResource("GradientTexture1D_yfyt0")
+collision_mode = 1
+collision_friction = 0.95
+collision_bounce = 1.0
+
+[sub_resource type="Gradient" id="Gradient_yfyt0"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_up20s"]
+gradient = SubResource("Gradient_yfyt0")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3jpvo"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 2.6
+direction = Vector3(1, -1, 0)
+spread = 142.286
+initial_velocity_min = 60.0
+initial_velocity_max = 180.0
+gravity = Vector3(0, 400, 0)
+damping_min = 0.4
+damping_max = 0.4
+scale_min = 6.0
+scale_max = 6.0
+color = Color(0.5, 0.296, 0.16, 1)
+color_ramp = SubResource("GradientTexture1D_up20s")
+color_initial_ramp = SubResource("GradientTexture1D_yfyt0")
+collision_mode = 1
+collision_friction = 0.57
+collision_bounce = 0.8
+
+[node name="Tree" type="Area2D" unique_id=1634677490]
+scale = Vector2(6, 6)
+script = ExtResource("1_cu3p6")
+tex_young = ExtResource("2_kwbku")
+tex_old = ExtResource("3_ptin7")
+tex_dry = ExtResource("4_djdpx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=278608367]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_r7al7")
+position = Vector2(-0.33333334, -32.5)
+texture = ExtResource("2_kwbku")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1286955297]
+position = Vector2(0, -28)
+shape = SubResource("RectangleShape2D_1vivr")
+
+[node name="HitParticle" type="GPUParticles2D" parent="." unique_id=1911314790]
+unique_name_in_owner = true
+position = Vector2(0, -13.333333)
+emitting = false
+amount = 100
+lifetime = 20.0
+one_shot = true
+explosiveness = 1.0
+trail_lifetime = 10.0
+process_material = SubResource("ParticleProcessMaterial_8vrlf")
+
+[node name="HitParticle2" type="GPUParticles2D" parent="." unique_id=930806481]
+unique_name_in_owner = true
+position = Vector2(0, -6.666666)
+emitting = false
+amount = 100
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_3jpvo")

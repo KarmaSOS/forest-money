@@ -1,5 +1,5 @@
 extends Node2D
-const TREE: PackedScene = preload("res://components/Tree.tscn")
+const TREE: PackedScene = preload("uid://b3ibniindnkp")
 @onready var spawn_start = %spawnStart.position.x
 @onready var spawn_end = %spawnEnd.position.x
 @onready var ground = %spawnStart.position.y

@@ -5,8 +5,8 @@ var _items_list: Array[ItemData] = []
 
 const RAW_ITEMS: Array[Dictionary] = [
 	{
-		"id": "ariel_axe",
-		"item_name": "Kapak Ariel",
+		"id": "adit_axe",
+		"item_name": "Kapak adid",
 		"type": "tool",
 		"price": 100,
 		"short_desc": "digunakan untuk menembang kayu... ya",
@@ -15,8 +15,10 @@ const RAW_ITEMS: Array[Dictionary] = [
 		"max_stack": 4,
 		"default_stock" : 64,
 		"stats": {
+			"max_target": 1,
 			"damage": 10,
-			"stamina_cost": 5
+			"stamina_cost": 5,
+			"time_cost": 10,
 		},
 		"effects": []
 	},
@@ -31,6 +33,7 @@ const RAW_ITEMS: Array[Dictionary] = [
 		"max_stack": 4,
 		"default_stock" : 64,
 		"stats": {
+			"max_target": 3,
 			"damage": 0,
 			"stamina_cost": 0
 		},
@@ -49,6 +52,7 @@ const RAW_ITEMS: Array[Dictionary] = [
 		"max_stack": 64,
 		"default_stock" : 64,
 		"stats": {
+			"max_target": 1,
 			"damage": 0
 		},
 		"effects": []
@@ -64,6 +68,7 @@ const RAW_ITEMS: Array[Dictionary] = [
 		"max_stack": 800,
 		"default_stock" : 64,
 		"stats": {
+			"max_target": 3,
 			"damage": 10
 		},
 		"effects": []

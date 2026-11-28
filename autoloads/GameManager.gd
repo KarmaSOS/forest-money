@@ -5,9 +5,11 @@ const DEFAULT_DATA: Dictionary = {
 	"day": 1,
 	"energy": 100,
 	"money": 100,
-	"skor_kerusakan_hutan": 0,
+	"forest_damage": 0,
+	"forest_heat": 0,
 	"inventory": {
 		"log" : 100,
+		"adit_axe": 1
 	}
 }
 
@@ -16,6 +18,8 @@ signal energy_update(new_value: int)
 signal inventory_update(item_id: String, new_value: int)
 signal stock_update(item_id: String, new_value: int)
 signal held_update(held_item: ItemData)
+signal forest_damage_update(new_value: int)
+signal forest_heat_update(new_value: int)
 
 var previous_scene_path: String = ""
 
@@ -23,6 +27,15 @@ var held_item: ItemData= null:
 	set(value):
 		held_item = value
 		held_update.emit(value)
+
+var forest_damage: int = DEFAULT_DATA["forest_damage"]:
+	set(value):
+		forest_damage = value
+		forest_damage_update.emit(value)
+var forest_heat: int = DEFAULT_DATA["forest_heat"]:
+	set(value):
+		forest_heat = value
+		forest_heat_update.emit(value)
 
 var day: int = DEFAULT_DATA["day"]
 var energy: int = DEFAULT_DATA["energy"]:
@@ -33,7 +46,6 @@ var money: int = DEFAULT_DATA["money"]:
 	set(value):
 		money = value
 		money_update.emit(money)
-var skor_kerusakan_hutan: int = DEFAULT_DATA["skor_kerusakan_hutan"]
 var inventory: Dictionary = DEFAULT_DATA["inventory"].duplicate()
 var shop_stock: Dictionary = {}
 
@@ -132,7 +144,7 @@ func get_save_data() -> Dictionary:
 		"day": day,
 		"energy": energy,
 		"money": money,
-		"skor_kerusakan_hutan": skor_kerusakan_hutan
+		"forest_damage": forest_damage
 	}
 	
 func save_game():
@@ -153,7 +165,7 @@ func load_game():
 			day = parsed.get("day", DEFAULT_DATA["day"])
 			energy = parsed.get("energy", DEFAULT_DATA["energy"])
 			money = parsed.get("money", DEFAULT_DATA["money"])
-			skor_kerusakan_hutan = parsed.get("skor_kerusakan_hutan", DEFAULT_DATA["skor_kerusakan_hutan"])
+			forest_damage = parsed.get("forest_damage", DEFAULT_DATA["forest_damage"])
 			print("Data game berhasil dimuat!")
 		else:
 			print("Format file JSON tidak valid.")
@@ -162,7 +174,7 @@ func reset_game():
 	day = DEFAULT_DATA["day"]
 	energy = DEFAULT_DATA["energy"]
 	money = DEFAULT_DATA["money"]
-	skor_kerusakan_hutan = DEFAULT_DATA["skor_kerusakan_hutan"]
+	forest_damage = DEFAULT_DATA["forest_damage"]
 	save_game()
 	print("Game telah di-reset ke kondisi awal!")
 	

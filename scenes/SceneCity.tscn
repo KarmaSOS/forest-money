@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ckxo86bxw1bvo" path="res://assets/images/backgrounds/market2.webp" id="1_vf6ys"]
 [ext_resource type="PackedScene" uid="uid://cq1xgcyhkxdta" path="res://components/Platform.tscn" id="2_bhb1d"]
 [ext_resource type="PackedScene" uid="uid://w5id7xwh67gd" path="res://components/characters/Player.tscn" id="3_yf2c4"]
-[ext_resource type="PackedScene" uid="uid://voe0ryps4hu6" path="res://components/HUD.tscn" id="4_6c77o"]
+[ext_resource type="PackedScene" uid="uid://b4fr2vji4r8xt" path="res://components/hud/HUD.tscn" id="4_yf2c4"]
 [ext_resource type="PackedScene" uid="uid://bf8eptfsvckm3" path="res://components/kill_zone.tscn" id="5_yf2c4"]
 [ext_resource type="PackedScene" uid="uid://tpcnkvm34av1" path="res://components/characters/Merchant.tscn" id="5_yndl3"]
 [ext_resource type="PackedScene" uid="uid://go5s6vxaxyt0" path="res://scenes/SceneShop.tscn" id="6_6c77o"]
@@ -59,13 +59,7 @@ rotation_smoothing_enabled = true
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=335407916]
 
-[node name="Control" parent="HUD" unique_id=1962362687 instance=ExtResource("4_6c77o")]
-offset_top = 7.0
-offset_bottom = 7.0
-metadata/_edit_lock_ = true
-
-[node name="toShop" parent="HUD/Control/container/container/container_bottom" parent_id_path=PackedInt32Array(1962362687, 242305525) index="2" unique_id=916698627]
-visible = false
+[node name="UI" parent="HUD" unique_id=1962362687 instance=ExtResource("4_yf2c4")]
 
 [node name="killZone" parent="HUD" unique_id=495784788 instance=ExtResource("5_yf2c4")]
 position = Vector2(558, 813)
@@ -82,6 +76,4 @@ offset_top = -89.0
 offset_right = 60.0
 offset_bottom = -57.0
 
-[editable path="HUD/Control"]
-[editable path="HUD/Control/container/container/container_bottom/addMoney"]
 [editable path="TheMerchant"]

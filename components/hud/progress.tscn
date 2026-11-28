@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://ckk4blnboggae"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oxl27"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_right = 4
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d2pp6"]
+bg_color = Color(0.6, 0.12599999, 0.12599999, 1)
+border_width_right = 1
+
+[node name="progress" type="ProgressBar" unique_id=1023374392]
+offset_right = 256.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_oxl27")
+theme_override_styles/fill = SubResource("StyleBoxFlat_d2pp6")
+value = 50.0

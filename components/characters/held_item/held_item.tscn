@@ -3,7 +3,47 @@
 [ext_resource type="Script" uid="uid://da8m8e2gbcs7h" path="res://components/characters/held_item/held_item.gd" id="1_jfx34"]
 [ext_resource type="Texture2D" uid="uid://b5sd20wkb8ooy" path="res://assets/images/items/kapak.png" id="2_bhvg3"]
 
+[sub_resource type="Shader" id="Shader_jfx34"]
+code = "shader_type canvas_item;
+
+uniform bool active = false;
+uniform vec4 outline_color : source_color = vec4(1.0, 1.0, 1.0, 1.0); // Warna putih
+uniform float outline_width : hint_range(0.0, 10.0) = 1.5; // Ketebalan border
+
+void fragment() {
+	vec4 col = texture(TEXTURE, UV);
+	
+	if (active && col.a == 0.0) {
+		vec2 size = TEXTURE_PIXEL_SIZE * outline_width;
+		float alpha = 0.0;
+		
+		// Mengecek 8 arah piksel di sekitar tepi sprite
+		alpha += texture(TEXTURE, UV + vec2(0.0, -size.y)).a;
+		alpha += texture(TEXTURE, UV + vec2(0.0, size.y)).a;
+		alpha += texture(TEXTURE, UV + vec2(-size.x, 0.0)).a;
+		alpha += texture(TEXTURE, UV + vec2(size.x, 0.0)).a;
+		alpha += texture(TEXTURE, UV + vec2(-size.x, -size.y)).a;
+		alpha += texture(TEXTURE, UV + vec2(size.x, -size.y)).a;
+		alpha += texture(TEXTURE, UV + vec2(-size.x, size.y)).a;
+		alpha += texture(TEXTURE, UV + vec2(size.x, size.y)).a;
+		
+		if (alpha > 0.0) {
+			col = outline_color;
+		}
+	}
+	
+	COLOR = col;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bhvg3"]
+shader = SubResource("Shader_jfx34")
+shader_parameter/active = false
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+shader_parameter/outline_width = 1.5
+
 [node name="HeldItem" type="Node2D" unique_id=1058586062]
+material = SubResource("ShaderMaterial_bhvg3")
 script = ExtResource("1_jfx34")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1636526506]
