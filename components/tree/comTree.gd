@@ -102,8 +102,7 @@ func _fell_tree() -> void:
 	# 1. Masukkan kayu & dampak ekologis
 	if not drop_item_id.is_empty() and drop_amount > 0:
 		GameManager.add_item(drop_item_id, drop_amount)
-	GameManager.forest_heat += heat_impact
-	GameManager.forest_damage += damage_impact
+		
 	
 	# 2. Matikan deteksi Area2D supaya outline target langsung hilang & tidak bisa dipukul lagi
 	set_deferred("monitoring", false)
@@ -117,6 +116,9 @@ func _fell_tree() -> void:
 	
 	# 5. Tunggu hingga sisa partikel selesai jatuh & menghilang (sesuai Lifetime partikel)
 	await get_tree().create_timer(1.0).timeout
+
+	GameManager.forest_heat += heat_impact
+	GameManager.forest_damage += damage_impact
 	
 	# 6. Baru hapus node pohon dari memori secara permanen
 	queue_free()

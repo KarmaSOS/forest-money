@@ -2,10 +2,11 @@ extends Node
 
 const SAVE_PATH: String = "user://savegame.json"
 const DEFAULT_DATA: Dictionary = {
+	"first_ending_trigger": false,
 	"day": 1,
 	"energy": 100,
 	"money": 100,
-	"forest_damage": 0,
+	"forest_damage": 90,
 	"forest_heat": 0,
 	"inventory": {
 		"log" : 100,
@@ -20,7 +21,9 @@ signal stock_update(item_id: String, new_value: int)
 signal held_update(held_item: ItemData)
 signal forest_damage_update(new_value: int)
 signal forest_heat_update(new_value: int)
+signal day_update(new_value: int)
 
+var first_ending_triggered = DEFAULT_DATA["first_ending_trigger"]
 var previous_scene_path: String = ""
 
 var held_item: ItemData= null:
@@ -30,14 +33,22 @@ var held_item: ItemData= null:
 
 var forest_damage: int = DEFAULT_DATA["forest_damage"]:
 	set(value):
-		forest_damage = value
-		forest_damage_update.emit(value)
+		forest_damage = clamp(value, 0.0, 100.0)
+		forest_damage_update.emit(forest_damage)
+		if forest_damage >= 100.0 and not first_ending_triggered:
+			goto_scene("uid://cxmtegrk5ntnj")
+		
+			
 var forest_heat: int = DEFAULT_DATA["forest_heat"]:
 	set(value):
 		forest_heat = value
 		forest_heat_update.emit(value)
 
-var day: int = DEFAULT_DATA["day"]
+var day: int = DEFAULT_DATA["day"]:
+	set(value):
+		day = value
+		day_update.emit(day)
+	
 var energy: int = DEFAULT_DATA["energy"]:
 	set(value):
 		energy = value

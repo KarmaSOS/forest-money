@@ -57,6 +57,11 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="day_count" type="Label" parent="container/container/container_top/VBoxContainer" unique_id=24905687]
+unique_name_in_owner = true
+layout_mode = 2
+text = "day null"
+
 [node name="HBoxContainer" type="HBoxContainer" parent="container/container/container_top/VBoxContainer" unique_id=1298768532]
 layout_mode = 2
 size_flags_vertical = 3
